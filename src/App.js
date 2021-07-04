@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+import SearchCountry from './components/SearchCountry';
+import CountryData from './components/CountryData';
+import CovidData from './components/CovidData';
+
+import CountryContextProvider from './context/CountryContext';
+import SelectedCountryContextProvider from './context/SelectedCountryContext';
+import InputLoaderContextProvider from './context/InputloaderContext';
+
+import './app.css';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='ui container segment'>
+      <InputLoaderContextProvider>
+        <CountryContextProvider>
+          <SelectedCountryContextProvider>
+            <SearchCountry />
+            <CountryData />
+            <CovidData />
+          </SelectedCountryContextProvider>
+        </CountryContextProvider>
+      </InputLoaderContextProvider>
     </div>
   );
-}
+};
 
 export default App;
