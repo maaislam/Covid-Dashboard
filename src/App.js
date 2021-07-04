@@ -8,7 +8,7 @@ import CountryContextProvider from './context/CountryContext';
 import SelectedCountryContextProvider from './context/SelectedCountryContext';
 import InputLoaderContextProvider from './context/InputloaderContext';
 
-import './app.css';
+import './App.css';
 
 const App = () => {
   return (
